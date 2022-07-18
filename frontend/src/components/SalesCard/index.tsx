@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { BASE_URL } from "../../utils/request";
-import { Sale } from "../models/Sale";
+import { sale } from "../models/Sale";
 
 
 import NotificationButton from '../NotificationsBotons';
@@ -13,7 +13,7 @@ function SalesCard() {
     const [minData, setMinDate] = useState(new Date(new Date().setDate(new Date().getDate() - 365)));
     const [maxData, setMaxDate] = useState(new Date());
 
-    const [sales, setSales] = useState<Sale[]>([]);
+    const [sales, setSales] = useState<sale[]>([]);
 
     useEffect(() => {
         const dmin = minData.toISOString().slice(0,10);
